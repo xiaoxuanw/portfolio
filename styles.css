@@ -19,14 +19,21 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: block;
     background-image: url(Images/mouse-hover-icon.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 100%;
     z-index: 1;
-    display: none;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.5s cubic-bezier(.28, .07, .75, 1) transform, 0.2s ease-in-out opacity;
+    pointer-events: none;
+}
+
+.cursor.active {
+    transform: scale(1);
+    opacity: 1;
 }
 
 a {
@@ -248,7 +255,7 @@ a::before {
     margin-top: 0;
 }
 
-.caption {
+.project-introduction {
     width: 60%;
     margin: 100px auto;
 }
