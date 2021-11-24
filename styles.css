@@ -95,7 +95,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1vmax;
+    font-size: 1.5vmax;
 }
 
 p {
@@ -106,11 +106,36 @@ p {
     margin: 150px 300px 200px 100px;
 }
 
-.item-wrapper {
-    margin: 200px 0 0;
-    display: flex;
-    flex-wrap: wrap;
+.track {
+    height: 400vw;
 }
+
+.camera {
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.frame {
+    height: 100%;
+    display: flex;
+}
+
+
+/* .frame-animation {
+    animation: horizontal 400px linear infinite;
+}
+
+@keyframes horizontal {
+    from {
+        transform: translateX(0vw)
+    }
+    to {
+        transform: translateX(-300vw)
+    }
+} */
 
 .project-title {
     position: relative;
@@ -126,11 +151,12 @@ p {
 }
 
 .item {
-    width: 33%;
+    width: 100%;
+    margin: 30px;
 }
 
 .item-content-wrapper {
-    height: 40vw;
+    height: 30vw;
     display: flex;
     margin: 5vw 2vw;
 }
