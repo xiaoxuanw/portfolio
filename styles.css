@@ -107,7 +107,7 @@ p {
 }
 
 .track {
-    height: 400vw;
+    height: 90vw;
 }
 
 .camera {
@@ -121,42 +121,29 @@ p {
 .frame {
     height: 100%;
     display: flex;
+    align-items: center;
 }
-
-
-/* .frame-animation {
-    animation: horizontal 400px linear infinite;
-}
-
-@keyframes horizontal {
-    from {
-        transform: translateX(0vw)
-    }
-    to {
-        transform: translateX(-300vw)
-    }
-} */
 
 .project-title {
     position: relative;
     margin-left: 30%;
     top: 50%;
+    width: 20vw;
     text-transform: uppercase;
 }
 
 .vl {
     border-left: 1px solid rgb(87, 87, 87);
     height: 40vw;
+    top: 0;
     margin: 0 30px 0 0;
 }
 
 .item {
-    width: 100%;
     margin: 30px;
 }
 
 .item-content-wrapper {
-    height: 30vw;
     display: flex;
     margin: 5vw 2vw;
 }
@@ -182,6 +169,7 @@ p {
 }
 
 .img-hover-zoom {
+    width: 20vw;
     /* [1.1] Set it as per your need */
     overflow: hidden;
     /* [1.2] Hide the overflowing of child elements */
@@ -206,7 +194,7 @@ p {
 }
 
 .introduction {
-    margin: 0px 300px 100px 100px;
+    margin: 150px 300px 100px 100px;
 }
 
 .footer {

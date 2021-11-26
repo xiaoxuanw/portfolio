@@ -31,15 +31,16 @@ $(".clickable-item").on("mouseleave", function() {
 });
 
 // horizontal scroll
-const frame = document.querySelector('.frame')
+var tween = TweenMax.to('.frame', 1, { x: -1600 })
+var controller = new ScrollMagic.Controller();
 
-// window.addEventListener('scroll', () => {
-//     var scrolled = window.pageYOffset;
-//     console.log(scrolled)
+var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 400, offset: 800, triggerHook: 1 })
+    .setTween(tween)
+    // .setPin(".frame")
+    // .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
+    .addTo(controller);
 
-//     const val = scrolled * 0.6;
-//     frame.style.transform = `translateX(${0.45*val}px)`
-// })
+
 
 const observer = new IntersectionObserver(entries => {
     // Loop over the entries
@@ -47,21 +48,13 @@ const observer = new IntersectionObserver(entries => {
         // If the element is visible
         if (entry.isIntersecting) {
             // Add the animation class
-            TweenMax.to('.frame', 1, { x: -600 })
-
-            // frame.style.transform = "translateX(-500px)";
 
 
-            frame.classList.add('frame-animation');
         }
         // frame.classList.remove('frame-animation');
 
     });
 });
 observer.observe(document.querySelector('.track'));
-TweenMax.to('.frame', 1, { x: -600 })
 
-var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 200, offset: -50 })
-    .setTween(tween)
-    .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
-    .addTo(controller);
+var rellax = new Rellax('.rellax');
