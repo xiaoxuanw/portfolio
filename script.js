@@ -41,20 +41,35 @@ var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 400, off
     .addTo(controller);
 
 
+//parallex 
 
-const observer = new IntersectionObserver(entries => {
-    // Loop over the entries
-    entries.forEach(entry => {
-        // If the element is visible
-        if (entry.isIntersecting) {
-            // Add the animation class
+$(function() { // wait for document ready
+    // build tween
+    var tween1 = new TimelineMax()
+        .add([
+            TweenMax.to(".track .frame", 1, { backgroundPosition: "-500% 0", ease: Linear.easeNone }),
+        ]);
+
+    // build scene
+    var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 400, offset: 800 })
+        .setTween(tween1)
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+})
+
+// const observer = new IntersectionObserver(entries => {
+//     // Loop over the entries
+//     entries.forEach(entry => {
+//         // If the element is visible
+//         if (entry.isIntersecting) {
+//             // Add the animation class
 
 
-        }
-        // frame.classList.remove('frame-animation');
+//         }
+//         // frame.classList.remove('frame-animation');
 
-    });
-});
-observer.observe(document.querySelector('.track'));
+//     });
+// }); observer.observe(document.querySelector('.track'));
 
-var rellax = new Rellax('.rellax');
+// var rellax = new Rellax('.rellax')
