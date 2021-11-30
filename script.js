@@ -30,46 +30,43 @@ $(".clickable-item").on("mouseleave", function() {
     cursor.removeClass("active")
 });
 
+
+//smooth scroll
+
+let sliederWidth;
+let imageWidth;
+let current = 0;
+let target = 0;
+let ease = .08;
+let slider = document.querySelector('.frame')
+
+function lerp(start, end, t) {
+    return start * (1 - t) + end * t;
+}
+
+function setTransform(el, transform) {
+    el.style.transform = transform;
+}
+
+
+function animate() {
+    current = parseFloat(lerp(current, target, ease)).toFixed(2);
+    target = document.querySelector('.camera').offsetTop
+    setTransform(slider, `translateX(-${current -550}px)`)
+    requestAnimationFrame(animate);
+
+}
+
+
+
 // horizontal scroll
-var tween = TweenMax.to('.frame', 1, { x: -1600 })
-var controller = new ScrollMagic.Controller();
+$(function() {
+    // var tween = TweenMax.to('.frame', 6, { x: -1500, ease: Linear.easeNone })
+    var controller = new ScrollMagic.Controller();
 
-var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 400, offset: 800, triggerHook: 1 })
-    .setTween(tween)
-    // .setPin(".frame")
-    // .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
-    .addTo(controller);
-
-
-//parallex 
-
-$(function() { // wait for document ready
-    // build tween
-    var tween1 = new TimelineMax()
-        .add([
-            TweenMax.to(".track .frame", 1, { backgroundPosition: "-500% 0", ease: Linear.easeNone }),
-        ]);
-
-    // build scene
-    var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 400, offset: 800 })
-        .setTween(tween1)
-        .addIndicators() // add indicators (requires plugin)
+    var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 200, offset: 800, triggerHook: 1 })
+    animate() // .setPin(".frame")
+        .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
         .addTo(controller);
 
 })
-
-// const observer = new IntersectionObserver(entries => {
-//     // Loop over the entries
-//     entries.forEach(entry => {
-//         // If the element is visible
-//         if (entry.isIntersecting) {
-//             // Add the animation class
-
-
-//         }
-//         // frame.classList.remove('frame-animation');
-
-//     });
-// }); observer.observe(document.querySelector('.track'));
-
-// var rellax = new Rellax('.rellax')
