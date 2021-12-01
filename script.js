@@ -57,6 +57,9 @@ function animate() {
 
 }
 
+lazyload();
+
+
 
 
 // horizontal scroll
