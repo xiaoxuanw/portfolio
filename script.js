@@ -31,48 +31,13 @@ $(".clickable-item").on("mouseleave", function() {
 });
 
 
-//smooth scroll
 
-// let sliderWidth;
-// let imageWidth;
-// let current = 0;
-// let target = 0;
-// let ease = .08;
-// let slider = document.querySelector('.frame')
-
-// function lerp(start, end, t) {
-//     return start * (1 - t) + end * t;
-// }
-
-// function setTransform(el, transform) {
-//     el.style.transform = transform;
-// }
-
-
-// function animate() {
-//     current = parseFloat(lerp(current, target, ease)).toFixed(2);
-//     target = document.querySelector('.camera').offsetTop
-//     setTransform(slider, `translateX(-${current-560}px)`)
-//     requestAnimationFrame(animate);
-
-// }
 
 lazyload();
 
 
 
 
-// // horizontal scroll
-// $(function() {
-//     var tween = TweenMax.to('.frame', 6, { x: -1500, })
-//     var controller = new ScrollMagic.Controller();
-
-//     var scene = new ScrollMagic.Scene({ triggerElement: ".track", duration: 800, offset: 800, triggerHook: 1 })
-//         .setTween(tween) // .setPin(".frame")
-//         .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
-//         .addTo(controller);
-
-// })
 gsap.registerPlugin(ScrollTrigger);
 
 let bodyScrollBar = Scrollbar.init(document.body, { damping: 0.1, delegateTo: document });
@@ -102,7 +67,9 @@ horizontalSections.forEach(function(sec, i) {
     var thisPinWrap = sec.querySelector('.pin-wrap');
     var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
 
-    var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
+    var getToValue = () => -(2600 - window.innerWidth);
+    console.log(thisAnimWrap.scrollWidth)
+    console.log(window.innerWidth)
 
     gsap.fromTo(thisAnimWrap, {
         x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue()

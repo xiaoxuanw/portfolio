@@ -1,422 +1,304 @@
-                                                :root {
-                                                   --max-width: calc(97.5vw - 24px);
-                                                   --vertical-margin: calc((100vw - var(--max-width))/2.75);
-                                                   --col: 2.12766%;
-                                                   --font-size-l: 3vmax;
-                                                   --font-size-m: calc(var(--font-size-l)/1.5);
-                                                   --light-gray: #f0f0f0;
-                                                   --black: rgba(0, 0, 0, 0.9);
-                                               }
-                                               
-                                               * {
-                                                   box-sizing: border-box;
-                                               }
-                                               
-                                               html {
-                                                   scroll-behavior: smooth;
-                                                   overscroll-behavior: none;
-                                               }
-                                               
-                                               .cursor {
-                                                   content: "";
-                                                   width: 100px;
-                                                   height: 100px;
-                                                   position: fixed;
-                                                   top: 0;
-                                                   left: 0;
-                                                   background-image: url(Images/mouse-hover-icon.png);
-                                                   background-position: center;
-                                                   background-repeat: no-repeat;
-                                                   background-size: cover;
-                                                   border-radius: 100%;
-                                                   z-index: 1;
-                                                   opacity: 0;
-                                                   transform: scale(0);
-                                                   transition: 0.5s cubic-bezier(.28, .07, .75, 1) transform, 0.2s ease-in-out opacity;
-                                                   pointer-events: none;
-                                               }
-                                               
-                                               .cursor.active {
-                                                   transform: scale(1);
-                                                   opacity: 1;
-                                               }
-                                               
-                                               a {
-                                                   color: inherit;
-                                                   text-decoration: none;
-                                               }
-                                               
-                                               section {
-                                                   background-color: rgb(252, 252, 252);
-                                                   width: 100vw;
-                                                   height: 100vh;
-                                                   position: fixed;
-                                                   top: 0;
-                                                   left: 0;
-                                                   right: 0;
-                                                   bottom: 0;
-                                                   overflow-y: scroll;
-                                               }
-                                               
-                                               .header {
-                                                   height: 100px;
-                                               }
-                                               
-                                               #logo {
-                                                   position: relative;
-                                                   top: 30px;
-                                                   left: 30px;
-                                                   width: 70px;
-                                                   cursor: pointer;
-                                               }
-                                               
-                                               .header-divider {
-                                                   position: relative;
-                                                   top: 40px;
-                                               }
-                                               
-                                               h1,
-                                               h2,
-                                               h3,
-                                               h4 {
-                                                   font-family: "Playfair Display", 'Times New Roman', Times, serif;
-                                                   margin: 0;
-                                               }
-                                               
-                                               p {
-                                                   font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-                                               }
-                                               
-                                               h1 {
-                                                   font-size: 90px;
-                                               }
-                                               
-                                               h2 {
-                                                   font-size: 3vmax;
-                                               }
-                                               
-                                               h3 {
-                                                   font-size: 2vmax;
-                                               }
-                                               
-                                               h4 {
-                                                   font-size: 24px;
-                                               }
-                                               
-                                               p {
-                                                   font-size: 16px;
-                                               }
-                                               
-                                               .main-content-container {}
-                                               
-                                               #main-scrollbar {
-                                                   width: auto;
-                                                   height: 100vh;
-                                                   overflow: auto;
-                                                   margin: 0;
-                                               }
-                                               
-                                               .hero {
-                                                   margin: 150px 300px 200px 100px;
-                                               }
-                                               /* .track {
-                                             height: 1800px;
-                                         }
-                                         
-                                         .camera {
-                                             width: 100vw;
-                                             height: 100vh;
-                                             position: sticky;
-                                             top: 0;
-                                             right: 50px;
-                                             overflow: hidden;
-                                             position: -webkit-sticky
-                                         }
-                                         
-                                         .frame {
-                                             height: 100%;
-                                             display: flex;
-                                             align-items: center;
-                                         } */
-                                               
-                                               body#main-scrollbar {
-                                                   width: auto;
-                                                   height: 100vh;
-                                                   overflow: auto;
-                                                   margin: 0;
-                                               }
-                                               
-                                               h1 {
-                                                   margin: 0;
-                                                   padding: 50px 0 0 50px;
-                                               }
-                                               
-                                               p {
-                                                   margin: 0;
-                                                   padding: 50px 0 50px 50px;
-                                               }
-                                               
-                                               section {
-                                                   width: 100%;
-                                                   height: 100%;
-                                                   position: relative;
-                                               }
-                                               
-                                               section:nth-of-type(odd) {
-                                                   background-color: #f0f0f0;
-                                               }
-                                               
-                                               section:nth-of-type(even) {
-                                                   background-color: #ffffff;
-                                               }
-                                               
-                                               .blank {
-                                                   height: 60vh;
-                                               }
-                                               
-                                               section.horizontal {
-                                                   overflow-x: hidden;
-                                               }
-                                               
-                                               section.horizontal .pin-wrap,
-                                               section.horizontal .animation-wrap {
-                                                   display: flex;
-                                                   position: relative;
-                                                   z-index: 1;
-                                                   height: 100vh;
-                                               }
-                                               
-                                               section.horizontal .item {
-                                                   position: relative;
-                                                   padding: 150px 80px;
-                                                   flex: 0 0 500px;
-                                                   height: calc(100vh - 300px);
-                                                   display: flex;
-                                                   align-items: center;
-                                                   line-height: 1.7;
-                                                   -webkit-user-select: none;
-                                                   -moz-user-select: none;
-                                                   -ms-user-select: none;
-                                                   user-select: none;
-                                                   border-right: 1px solid rgba(0, 0, 0, 0.06);
-                                                   background-color: transparent;
-                                               }
-                                               
-                                               section.horizontal .item:before {
-                                                   position: absolute;
-                                                   font-size: 100px;
-                                                   opacity: .13;
-                                                   font-weight: bold;
-                                                   z-index: -1;
-                                                   -webkit-transform: translate(-30px, -50px);
-                                                   transform: translate(-30px, -50px);
-                                                   line-height: 1;
-                                               }
-                                               
-                                               section.horizontal .animation-wrap.to-right {
-                                                   counter-reset: item;
-                                                   float: left;
-                                               }
-                                               
-                                               section.horizontal .animation-wrap.to-left {
-                                                   counter-reset: item 11;
-                                                   float: right;
-                                               }
-                                               
-                                               section.horizontal .animation-wrap.to-right .item:before {
-                                                   counter-increment: item;
-                                                   content: counter(item);
-                                               }
-                                               
-                                               section.horizontal .animation-wrap.to-left .item:before {
-                                                   counter-increment: item -1;
-                                                   content: counter(item);
-                                               }
-                                               
-                                               section.horizontal .animation-wrap .item:nth-child(2n+2) {
-                                                   align-items: flex-start;
-                                               }
-                                               
-                                               section.horizontal .animation-wrap .item:nth-child(4n+4) {
-                                                   align-items: flex-end;
-                                               }
-                                               
-                                               .project-title {
-                                                   position: relative;
-                                                   margin-left: 10px;
-                                                   top: 50%;
-                                                   width: 400px;
-                                                   text-transform: uppercase;
-                                                   text-align: center;
-                                               }
-                                               
-                                               .vl {
-                                                   border-left: 1px solid rgb(151, 151, 151);
-                                                   height: 550px;
-                                                   top: 0;
-                                                   margin: 0 20px;
-                                               }
-                                               
-                                               .item {
-                                                   width: 600px;
-                                                   margin: 0px;
-                                               }
-                                               
-                                               .item-content-wrapper {
-                                                   display: flex;
-                                                   margin: 20px 10px;
-                                               }
-                                               
-                                               .clickable-item:hover {
-                                                   cursor: none;
-                                               }
-                                               
-                                               .item-number {
-                                                   position: relative;
-                                                   margin-right: 60px;
-                                               }
-                                               
-                                               .item-number h1 {
-                                                   margin: 0;
-                                                   position: absolute;
-                                                   bottom: 0;
-                                               }
-                                               
-                                               .image-and-title {
-                                                   margin-right: 30px;
-                                                   padding-top: 0px;
-                                               }
-                                               
-                                               .img-hover-zoom {
-                                                   width: 300px;
-                                                   /* [1.1] Set it as per your need */
-                                                   overflow: hidden;
-                                                   /* [1.2] Hide the overflowing of child elements */
-                                               }
-                                               /* [2] Transition property for smooth transformation of images */
-                                               
-                                               .img-hover-zoom img {
-                                                   transition: transform 1s ease;
-                                               }
-                                               /* [3] Finally, transforming the image when container gets hovered */
-                                               
-                                               .img-hover-zoom:hover img {
-                                                   transform: scale(1.05);
-                                               }
-                                               
-                                               .item-title {
-                                                   margin: 0;
-                                               }
-                                               
-                                               .introduction {
-                                                   margin: 150px 300px 100px 100px;
-                                               }
-                                               
-                                               .footer {
-                                                   margin: 2rem 3rem .5rem;
-                                                   text-transform: uppercase;
-                                                   height: 3vmax;
-                                               }
-                                               
-                                               .footer-left {
-                                                   float: left;
-                                                   display: inline;
-                                               }
-                                               
-                                               .footer-right {
-                                                   float: right;
-                                                   display: inline;
-                                               }
-                                               /* 
-a {
-    position: relative;
-} */
-                                               /* a::before {
-    transform: scaleX(0);
-    transform-origin: bottom right;
+:root {
+  --max-width: calc(97.5vw - 24px);
+  --vertical-margin: calc((100vw - var(--max-width)) / 2.75);
+  --col: 2.12766%;
+  --font-size-l: 3vmax;
+  --font-size-m: calc(var(--font-size-l) / 1.5);
+  --light-gray: #f0f0f0;
+  --black: rgba(0, 0, 0, 0.9);
+}
+* {
+  box-sizing: border-box;
 }
 
-a:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-} */
-                                               /* 
-a::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    inset: 0 0 0 0;
-    background: hsl(200 100% 80%);
-    z-index: -1;
-    transition: transform .3s ease;
-} */
-                                               
-                                               .page-content {
-                                                   margin: 50px 100px;
-                                               }
-                                               
-                                               .icon-title {
-                                                   display: flex;
-                                               }
-                                               
-                                               .back-group {
-                                                   margin-top: 20px;
-                                                   margin-left: 100px;
-                                               }
-                                               
-                                               .project-title-wrapper {
-                                                   display: inline;
-                                                   margin-left: 20vw;
-                                               }
-                                               
-                                               .project-subhead {
-                                                   text-transform: uppercase;
-                                                   margin-top: 0;
-                                                   font-size: 16px !important;
-                                                   color: rgb(99, 99, 99);
-                                                   letter-spacing: .1rem;
-                                                   font-family: "Playfair display"
-                                               }
-                                               
-                                               .project-heading {
-                                                   margin-top: 0;
-                                               }
-                                               
-                                               .page-body {
-                                                   /* margin-left: 22vw; */
-                                               }
-                                               
-                                               .project-section {
-                                                   margin-top: 150px;
-                                               }
-                                               
-                                               .image-wrapper {
-                                                   display: flex;
-                                                   width: 100%;
-                                                   margin-top: 50px;
-                                               }
-                                               
-                                               img {
-                                                   max-width: 100%;
-                                                   max-height: 100%;
-                                               }
-                                               
-                                               .page-body p {
-                                                   width: 100%;
-                                                   font-size: 26px;
-                                               }
-                                               
-                                               .back-text {
-                                                   font-size: 20px;
-                                                   margin-left: 10px;
-                                                   text-transform: uppercase;
-                                                   display: inline;
-                                               }
-                                               
-                                               .project-end {
-                                                   margin: 200px 0 40px 0;
-                                               }
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+
+.cursor {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(Images/mouse-hover-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s cubic-bezier(0.28, 0.07, 0.75, 1) transform,
+    0.2s ease-in-out opacity;
+  pointer-events: none;
+}
+
+.cursor.active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  height: 100px;
+}
+
+#logo {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.header-divider {
+  position: relative;
+  top: 40px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+p {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+}
+
+h1 {
+  font-size: 90px;
+}
+
+h2 {
+  font-size: 3vmax;
+}
+
+h3 {
+  font-size: 2vmax;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.hero {
+  margin: 150px 300px 200px 100px;
+}
+
+body#main-scrollbar {
+  width: auto;
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 50px 0 0 50px;
+}
+
+p {
+  margin: 0;
+  padding: 50px 0 50px 50px;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.blank {
+  height: 100vh;
+}
+
+section.horizontal {
+  overflow: hidden;
+  margin: 0;
+}
+
+section.horizontal .pin-wrap,
+section.horizontal .animation-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+
+section.horizontal .item {
+  position: relative;
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.project-title {
+  position: relative;
+  margin-left: 10px;
+  top: 50%;
+  width: 400px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.vl {
+  border-left: 1px solid rgb(151, 151, 151);
+  height: 550px;
+  top: 0;
+  margin: 0 20px;
+}
+
+.item {
+  width: 600px;
+  margin: 0px;
+}
+
+.item-content-wrapper {
+  display: flex;
+  margin: 20px 10px;
+}
+
+.clickable-item:hover {
+  cursor: none;
+}
+
+.item-number {
+  position: relative;
+  margin-right: 60px;
+}
+
+.item-number h1 {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.image-and-title {
+  margin-right: 30px;
+  padding-top: 0px;
+}
+
+.img-hover-zoom {
+  width: 300px;
+  /* [1.1] Set it as per your need */
+  overflow: hidden;
+  /* [1.2] Hide the overflowing of child elements */
+}
+/* [2] Transition property for smooth transformation of images */
+
+.img-hover-zoom img {
+  transition: transform 1s ease;
+}
+/* [3] Finally, transforming the image when container gets hovered */
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.item-title {
+  margin: 0;
+}
+
+.introduction {
+  margin: 150px 300px 100px 100px;
+}
+
+.footer {
+  margin: 2rem 3rem 0.5rem;
+  text-transform: uppercase;
+  height: 3vmax;
+}
+
+.footer-left {
+  float: left;
+  display: inline;
+}
+
+.footer-right {
+  float: right;
+  display: inline;
+}
+
+.page-content {
+  margin: 50px 100px;
+}
+
+.icon-title {
+  display: flex;
+}
+
+.back-group {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.project-title-wrapper {
+  display: inline;
+  margin-left: 20vw;
+}
+
+.project-subhead {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 16px !important;
+  color: rgb(99, 99, 99);
+  letter-spacing: 0.1rem;
+  font-family: "Playfair display";
+}
+
+.project-heading {
+  margin-top: 0;
+}
+
+.project-section {
+  margin-top: 150px;
+}
+
+.image-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.page-body p {
+  width: 100%;
+  font-size: 26px;
+}
+
+.back-text {
+  font-size: 20px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.project-end {
+  margin: 200px 0 40px 0;
+}
