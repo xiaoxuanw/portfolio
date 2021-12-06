@@ -16,10 +16,16 @@ TweenMax.to({}, 0.016, {
         });
     }
 });
+var scrollTop     = $(window).scrollTop(),
+    elementOffset = $('.horizontal').offset().top,
+    distance      = (elementOffset - scrollTop);
 
 $(document).on("mousemove", function(e) {
+
     mouseX = e.pageX - 50;
-    mouseY = e.pageY - 50;
+    mouseY = e.pageY- 50 ;
+    console.log(MouseY)
+
 });
 
 $(".clickable-item").on("mouseenter", function() {
@@ -81,7 +87,7 @@ horizontalSections.forEach(function(sec, i) {
             scroller: document.body, // neccessary setting for smooth-scrollbar on body
             pinType: 'transform', // neccessary setting for smooth-scrollbar on body
             start: "top top",
-            end: () => "+=" + thisAnimWrap.scrollWidth,
+            end: () => "+=" + 2600,
             pin: thisPinWrap,
             invalidateOnRefresh: true,
             anticipatePin: 1,
