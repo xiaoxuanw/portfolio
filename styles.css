@@ -4,7 +4,7 @@
   --col: 2.12766%;
   --font-size-l: 3vmax;
   --font-size-m: calc(var(--font-size-l) / 1.5);
-  --light-gray: #f0f0f0;
+  --light-gray: #c9c9c9;
   --black: rgba(0, 0, 0, 0.9);
 }
 * {
@@ -30,7 +30,7 @@ html {
   background-size: cover;
   border-radius: 100%;
   z-index: 1;
-  opacity: 0;
+  opacity: 1;
   transform: scale(0);
   transition: 0.5s cubic-bezier(0.28, 0.07, 0.75, 1) transform,
     0.2s ease-in-out opacity;
@@ -79,7 +79,7 @@ p {
 }
 
 h1 {
-  font-size: 90px;
+  font-size: 120px;
 }
 
 h2 {
@@ -91,7 +91,7 @@ h3 {
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 p {
@@ -151,15 +151,24 @@ section.horizontal .item {
 
 .project-title {
   position: relative;
-  margin-left: 10px;
-  top: 50%;
-  width: 400px;
+  margin-left: 100px !important;
   text-transform: uppercase;
-  text-align: center;
+  text-align:center;
 }
+.project-title h2{
+  width:300px;
+  color:var(--light-gray);
+}
+.project-title :first-child{
+  letter-spacing:0.3rem;
 
+}
+.project-title :nth-child(2){
+  letter-spacing:0.6rem;
+
+}
 .vl {
-  border-left: 1px solid rgb(151, 151, 151);
+  border-left: 1px solid var(--light-gray);
   height: 550px;
   top: 0;
   margin: 0 50px;
@@ -176,7 +185,7 @@ section.horizontal .item {
 }
 
 .clickable-item:hover {
-  cursor: none;
+  cursor: pointer;
 }
 
 .item-number {
@@ -196,7 +205,8 @@ section.horizontal .item {
 }
 
 .img-hover-zoom {
-  width: 300px;
+  width: 250px;
+  height:350px;
   /* [1.1] Set it as per your need */
   overflow: hidden;
   /* [1.2] Hide the overflowing of child elements */
@@ -215,8 +225,11 @@ section.horizontal .item {
 .item-title {
   margin: 0;
 }
+.item-type{
+color:var(--light-gray);}
 
 .introduction {
+  width: 1000px;
   margin: 150px 300px 100px 100px;
 }
 

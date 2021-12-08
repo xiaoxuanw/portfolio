@@ -1,40 +1,42 @@
 //cursor animation
-var cursor = $(".cursor");
+// var cursor = $(".cursor");
 
-var mouseX = 0,
-    mouseY = 0;
+// var mouseX = 0,
+//     mouseY = 0;
 
-TweenMax.to({}, 0.016, {
-    repeat: -1,
-    onRepeat: function() {
+// TweenMax.to({}, 0.016, {
+//     repeat: -1,
+//     onRepeat: function() {
 
-        TweenMax.set(cursor, {
-            css: {
-                left: mouseX,
-                top: mouseY
-            }
-        });
-    }
-});
-var scrollTop     = $(window).scrollTop(),
-    elementOffset = $('.horizontal').offset().top,
-    distance      = (elementOffset - scrollTop);
+//         TweenMax.set(cursor, {
+//             css: {
+//                 left: mouseX,
+//                 top: mouseY
+//             }
+//         });
+//     }
+// });
+// var scrollTop     = $(window).scrollTop(),
+//     elementOffset = $('.horizontal').offset().top,
+//     distance      = (elementOffset - scrollTop);
+//     document.addEventListener('mousemove', (event) => {
+//         console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+//     });
+// $(document).on("mousemove", function(e) {
 
-$(document).on("mousemove", function(e) {
+//     mouseX = e.pageX - 50;
+//      mouseY = e.pageX- 50 ;
+//     console.log()
+// });
 
-    mouseX = e.pageX - 50;
-    mouseY = e.pageY- 50 ;
-    console.log(MouseY)
 
-});
+// $(".clickable-item").on("mouseenter", function() {
+//     cursor.addClass("active")
+// });
 
-$(".clickable-item").on("mouseenter", function() {
-    cursor.addClass("active")
-});
-
-$(".clickable-item").on("mouseleave", function() {
-    cursor.removeClass("active")
-});
+// $(".clickable-item").on("mouseleave", function() {
+//     cursor.removeClass("active")
+// });
 
 
 
@@ -73,7 +75,7 @@ horizontalSections.forEach(function(sec, i) {
     var thisPinWrap = sec.querySelector('.pin-wrap');
     var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
 
-    var getToValue = () => -(2600 - window.innerWidth);
+    var getToValue = () => -(2900 - window.innerWidth);
     console.log(thisAnimWrap.scrollWidth)
     console.log(window.innerWidth)
 
@@ -87,7 +89,7 @@ horizontalSections.forEach(function(sec, i) {
             scroller: document.body, // neccessary setting for smooth-scrollbar on body
             pinType: 'transform', // neccessary setting for smooth-scrollbar on body
             start: "top top",
-            end: () => "+=" + 2600,
+            end: () => "+=" + 2800,
             pin: thisPinWrap,
             invalidateOnRefresh: true,
             anticipatePin: 1,
