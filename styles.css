@@ -95,7 +95,10 @@ h4 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 24px;
+}
+p.a {
+  font-size: 20px;
 }
 
 .hero {
@@ -152,19 +155,17 @@ section.horizontal .item {
   position: relative;
   margin-left: 100px !important;
   text-transform: uppercase;
-  text-align:center;
+  text-align: center;
 }
-.project-title h2{
-  width:300px;
-  color:var(--light-gray);
+.project-title h2 {
+  width: 300px;
+  color: var(--light-gray);
 }
-.project-title :first-child{
-  letter-spacing:0.3rem;
-
+.project-title :first-child {
+  letter-spacing: 0.3rem;
 }
-.project-title :nth-child(2){
-  letter-spacing:0.6rem;
-
+.project-title :nth-child(2) {
+  letter-spacing: 0.6rem;
 }
 .vl {
   border-left: 1px solid var(--light-gray);
@@ -205,7 +206,7 @@ section.horizontal .item {
 
 .img-hover-zoom {
   width: 250px;
-  height:350px;
+  height: 350px;
   /* [1.1] Set it as per your need */
   overflow: hidden;
   /* [1.2] Hide the overflowing of child elements */
@@ -224,8 +225,9 @@ section.horizontal .item {
 .item-title {
   margin: 0;
 }
-.item-type{
-color:var(--light-gray);}
+.item-type {
+  color: var(--light-gray);
+}
 
 .introduction {
   width: 1000px;
@@ -243,28 +245,30 @@ color:var(--light-gray);}
   display: inline;
 }
 
-.highlight-text{
-  position:relative;
-  margin:0;
-  padding:10px;
+.highlight-text {
+  position: relative;
+  margin: 0;
+  padding: 10px;
 }
-.highlight-text::before{
+.highlight-text::before {
   transform: scaleX(0);
   transform-origin: bottom right;
   content: " ";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0 0 0 0;
-  background:#FCD804;
+  background: #fcd804;
   z-index: -1;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
-.highlight-text:hover::before{
+.highlight-text:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 
 .footer-right {
   float: right;
@@ -319,7 +323,9 @@ img {
 
 .page-body p {
   width: 100%;
-  font-size: 26px;
+}
+.page-paragraph{
+  margin-bottom: 30px;
 }
 
 .back-text {
